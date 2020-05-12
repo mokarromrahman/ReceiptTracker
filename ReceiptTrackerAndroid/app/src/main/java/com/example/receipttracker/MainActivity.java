@@ -13,9 +13,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     //Dictionary holding countries and countryIDs from the Back4App api
     Map<String,String> _dictCountries;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,18 +38,25 @@ public class MainActivity extends AppCompatActivity {
         AutoCompleteTextView _ddlCountries = (AutoCompleteTextView) findViewById(R.id._autoCompCountries);
 
         InitializeCDictionaries();
+
         //Find the countries and save it within the dictionary
-        FindCountries(_dictCountries, _ddlCountries);
+        FindCountries();
+
+        /*try {
+            Thread.sleep(5000);
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
 
         TextView tv = (TextView)findViewById((R.id.testTextView));
-
-
-
+        Log.d("MainActivity: ", "I'm in main first");
         //testing drop down list filling
-        /*String[] myCountries = new String[] {"Canada", "US", "Mexico"};
+        List<String> myCountries = new ArrayList<String>(_dictCountries.keySet());
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, myCountries);
-        _ddlCountries.setAdapter(adapter);*/
+        _ddlCountries.setAdapter(adapter);
     }
 
     private void InitializeCDictionaries()
@@ -54,10 +64,13 @@ public class MainActivity extends AppCompatActivity {
         _dictCountries = new Hashtable<>();
     }
 
-    private void FindCountries(Map<String,String> countriesDict, final AutoCompleteTextView actv)
+    private void FindCountries()
     {
+        FindCountriesAsync findCountriesAsync = new FindCountriesAsync(this);
+        findCountriesAsync.execute();
+
         //testing Back4App api to get all countries
-        (new Thread(new Runnable() {
+        /*(new Thread(new Runnable() {ca
             @Override
             public void run() {
                 try {
@@ -89,17 +102,11 @@ public class MainActivity extends AppCompatActivity {
                     finally {
                         urlConnection.disconnect();
 
-                        //Display the countries to the drop down list
-                        String[] myCountries = new String[]{};
-                        _dictCountries.keySet().toArray(myCountries);
-                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                                android.R.layout.simple_list_item_1,myCountries);
-                        actv.setAdapter(adapter);
                     }
                 } catch (Exception e) {
                     Log.e("Something went wrong", e.toString());
                 }
             }
-        })).start();
+        })).start();*/
     }
 }
