@@ -32,21 +32,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AutoCompleteTextView _ddlCountries = (AutoCompleteTextView) findViewById(R.id._autoCompCountries);
 
         InitializeCDictionaries();
         //Find the countries and save it within the dictionary
-        FindCountries(_dictCountries);
+        FindCountries(_dictCountries, _ddlCountries);
 
         TextView tv = (TextView)findViewById((R.id.testTextView));
 
 
 
         //testing drop down list filling
-        AutoCompleteTextView _ddlCountries = (AutoCompleteTextView) findViewById(R.id._autoCompCountries);
-        String[] myCountries = new String[] {"Canada", "US", "Mexico"};
+        /*String[] myCountries = new String[] {"Canada", "US", "Mexico"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, myCountries);
-        _ddlCountries.setAdapter(adapter);
+        _ddlCountries.setAdapter(adapter);*/
     }
 
     private void InitializeCDictionaries()
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         _dictCountries = new Hashtable<>();
     }
 
-    private void FindCountries(Map<String,String> countriesDict)
+    private void FindCountries(Map<String,String> countriesDict, final AutoCompleteTextView actv)
     {
         //testing Back4App api to get all countries
         (new Thread(new Runnable() {
@@ -88,6 +88,13 @@ public class MainActivity extends AppCompatActivity {
                     }
                     finally {
                         urlConnection.disconnect();
+
+                        //Display the countries to the drop down list
+                        String[] myCountries = new String[]{};
+                        _dictCountries.keySet().toArray(myCountries);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                                android.R.layout.simple_list_item_1,myCountries);
+                        actv.setAdapter(adapter);
                     }
                 } catch (Exception e) {
                     Log.e("Something went wrong", e.toString());
