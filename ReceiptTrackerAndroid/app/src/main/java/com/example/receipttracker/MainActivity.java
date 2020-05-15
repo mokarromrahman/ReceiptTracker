@@ -36,18 +36,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         AutoCompleteTextView _ddlCountries = (AutoCompleteTextView) findViewById(R.id._autoCompCountries);
-
+        _ddlCountries.setThreshold(1);
         InitializeCDictionaries();
 
         //Find the countries and save it within the dictionary
         FindCountries();
 
-        /*try {
+        try {
             Thread.sleep(5000);
         }
         catch (InterruptedException e) {
             e.printStackTrace();
-        }*/
+        }
 
         TextView tv = (TextView)findViewById((R.id.testTextView));
         Log.d("MainActivity: ", "I'm in main first");
@@ -66,11 +66,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void FindCountries()
     {
-        FindCountriesAsync findCountriesAsync = new FindCountriesAsync(this);
-        findCountriesAsync.execute();
+        //FindCountriesAsync findCountriesAsync = new FindCountriesAsync(this);
+        //findCountriesAsync.execute();
 
         //testing Back4App api to get all countries
-        /*(new Thread(new Runnable() {ca
+        (new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -107,6 +107,6 @@ public class MainActivity extends AppCompatActivity {
                     Log.e("Something went wrong", e.toString());
                 }
             }
-        })).start();*/
+        })).start();
     }
 }
