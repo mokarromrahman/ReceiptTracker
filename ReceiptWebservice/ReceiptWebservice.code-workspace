@@ -1,0 +1,9 @@
+{
+	"folders": [
+		{
+			"uri": "vscode-remote://ssh-remote+7b22686f73744e616d65223a226d6f6b6172726f6d2d4b353345227d/var/www/mokarrom.com/public_html"
+		}
+	],
+	"remoteAuthority": "ssh-remote+7b22686f73744e616d65223a226d6f6b6172726f6d2d4b353345227d",
+	"settings": {}
+}
