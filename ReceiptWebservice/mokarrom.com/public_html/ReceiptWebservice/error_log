@@ -1,0 +1,21 @@
+[14-May-2020 04:22:20 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/mrahman3/public_html/CMPE2500/ReceiptWebservice/functions.php on line 3
+[14-May-2020 04:25:05 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/mrahman3/public_html/CMPE2500/ReceiptWebservice/functions.php on line 3
+[14-May-2020 20:41:36 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/mrahman3/public_html/ReceiptWebservice/functions.php on line 3
+[14-May-2020 20:45:14 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/mrahman3/public_html/ReceiptWebservice/registration.php on line 17
+[14-May-2020 20:45:17 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/mrahman3/public_html/ReceiptWebservice/registration.php on line 17
+[14-May-2020 21:02:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function real_escape_string() on null in /home/mrahman3/public_html/ReceiptWebservice/functions.php:64
+Stack trace:
+#0 /home/mrahman3/public_html/ReceiptWebservice/registration.php(16): RegisterUser(Array)
+#1 {main}
+  thrown in /home/mrahman3/public_html/ReceiptWebservice/functions.php on line 64
+[14-May-2020 21:02:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function real_escape_string() on null in /home/mrahman3/public_html/ReceiptWebservice/functions.php:64
+Stack trace:
+#0 /home/mrahman3/public_html/ReceiptWebservice/registration.php(16): RegisterUser(Array)
+#1 {main}
+  thrown in /home/mrahman3/public_html/ReceiptWebservice/functions.php on line 64
+[14-May-2020 21:05:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function real_escape_string() on null in /home/mrahman3/public_html/ReceiptWebservice/functions.php:64
+Stack trace:
+#0 /home/mrahman3/public_html/ReceiptWebservice/registration.php(16): RegisterUser(Array)
+#1 {main}
+  thrown in /home/mrahman3/public_html/ReceiptWebservice/functions.php on line 64
+[14-May-2020 21:46:23 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /home/mrahman3/public_html/ReceiptWebservice/functions.php on line 75

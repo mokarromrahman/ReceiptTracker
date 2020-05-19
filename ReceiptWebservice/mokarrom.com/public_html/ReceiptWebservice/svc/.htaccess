@@ -1,0 +1,30 @@
+# Access the mod_rewrite.c module of Apache Web Server 
+RewriteEngine On
+
+# RewriteCond directive -   Defines a rule condition.  Use one or more of these
+#                           before a RewriteRule directive.  
+# Syntax: RewriteCond TestString CondPattern
+# 
+# The following two conditions cause the rewrite rule only to be applied if the 
+# requested URI does not match an existing filename or directory.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# RewriteRule directive -   Replace the supplied pattern with the supplied
+#                           substitution.  The pattern is a regular expression.
+#                           The substitution is a string that may be augmented 
+#                           by special flags which are comma separated and
+#                           enclosed in [ ].
+# Syntax: RewriteRule Pattern Substitution 
+#
+# The following rule will only be applied if the above two rules are satisfied.
+#
+# The effect will be that any request sent to the current directory that is not
+# for an existing file or directory shall be redirected to api.php
+#
+# Flags:    QSA causes the portion of the Pattern captured by the (.*) to be 
+#               appended in place of the $1 delimiter.
+#           NC causes the URI to be Not Case sensitive.
+#           L causes this to be the last rule applied in this file, but only if
+#               it is applied. 
+RewriteRule ^(.*)$ api.php?request=$1 [QSA,NC,L]
