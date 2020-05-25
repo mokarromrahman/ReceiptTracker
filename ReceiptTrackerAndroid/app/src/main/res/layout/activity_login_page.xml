@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginPage">
+
+    <Button
+        android:id="@+id/_btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="167dp"
+        android:text="@string/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_etPassword" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="297dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="149dp"
+        android:layout_marginEnd="57dp"
+        android:text="@string/receipt_tracker"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/_etEmail"
+        android:layout_width="171dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="120dp"
+        android:hint="@string/prompt_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:inputType="textEmailAddress"
+        android:importantForAutofill="no" />
+
+    <!--<EditText
+        android:id="@+id/_etPassword"
+        android:layout_width="173dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="120dp"
+        android:hint="@string/prompt_password"
+        android:inputType="@string/prompt_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_etEmail"
+        android:importantForAutofill="no" />-->
+
+    <EditText
+        android:id="@+id/_etPassword"
+        android:layout_width="171dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@+id/_etEmail"
+        android:hint="@string/prompt_password"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/_tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="175dp"
+        android:layout_marginBottom="156dp"
+        android:text="@string/textview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_btnLogin" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
