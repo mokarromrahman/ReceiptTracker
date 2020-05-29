@@ -49,19 +49,6 @@
         android:inputType="textEmailAddress"
         android:importantForAutofill="no" />
 
-    <!--<EditText
-        android:id="@+id/_etPassword"
-        android:layout_width="173dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="118dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="120dp"
-        android:hint="@string/prompt_password"
-        android:inputType="@string/prompt_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_etEmail"
-        android:importantForAutofill="no" />-->
 
     <EditText
         android:id="@+id/_etPassword"
