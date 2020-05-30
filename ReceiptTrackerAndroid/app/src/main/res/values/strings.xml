@@ -21,4 +21,13 @@
     <string name="login">Login</string>
     <string name="receipt_tracker">Receipt Tracker</string>
     <string name="textview">TextView</string>
+    <string name="button">Button</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="create_a_new_account">Create a new Account</string>
+    <string name="register">Register</string>
+    <string name="register_status">Register Status</string>
+
 </resources>

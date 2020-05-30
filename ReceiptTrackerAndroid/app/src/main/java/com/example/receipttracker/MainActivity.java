@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
                         for(Integer i = 0; i < results.length(); ++i)
                         {
-                            Log.d("Reading JSON Results", results.getJSONObject(i).get("name").toString());
+                            //Log.d("Reading JSON Results", results.getJSONObject(i).get("name").toString());
                             _dictCountries.put(results.getJSONObject(i).get("name").toString(), results.getJSONObject(i).get("objectId").toString());
                         }
 
