@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -183,18 +184,18 @@ public class SignUpPage extends AppCompatActivity {
         protected void onPostExecute(JSONObject jsonObject) {
             super.onPostExecute(jsonObject);
 
-            //Need to check for existing user
-            //check for successfully created user
-            //
+            //Get a strong reference to the SignUp  page and make sure that it
+            //is not null or finishing
             SignUpPage signUpPage = signUpPageWeakReference.get();
-
             if(signUpPage == null || signUpPage.isFinishing())
                 return;
 
+            //try to read info from the JSONObject
             try
             {
-                signUpPage.status.setText(jsonObject.getString("status"));
-
+                //signUpPage.status.setText(jsonObject.getString("status"));
+                Toast toast = Toast.makeText(signUpPage.getApplicationContext(), jsonObject.getString("status"), Toast.LENGTH_LONG);
+                toast.show();
                 if(jsonObject.getBoolean("otherIssues"))
                 {
                     return;
