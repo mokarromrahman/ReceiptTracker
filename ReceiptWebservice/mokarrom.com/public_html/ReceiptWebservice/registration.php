@@ -4,7 +4,7 @@
     $status = null;
     
     //if the user has submitted then take the neccessary fields
-    if(isset($_POST["submit"]))
+    if(isset($_POST["submit"]) && $_POST["submit"] == "Register")
     {
         $newUser = array();
         $newUser["firstName"] = $_POST["firstName"];
@@ -46,14 +46,14 @@
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" name="submit" value="Register" retuired/>
+                        <input type="submit" name="submit" value="Register" required/>
                     </td>
                 </tr>
             </table>
         </form>
         <center>
         <?php
-            echo $status;
+            echo "<p>".$status["status"]."</p>";
         ?>
         </center>
     </body>

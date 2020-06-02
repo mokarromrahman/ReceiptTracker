@@ -1,4 +1,7 @@
 <?php
+    //Use this page to find the username and password needed for database access.
+    require_once("mySQLCredentials.php");
+
     //this file will contain the ways to interact with the 
     //mySQL database
     $mysql_connection = null;
@@ -10,9 +13,11 @@
     function mysqlConnect()
     {
         global $mysql_connection, $mysql_response;
+
+        $user = MySQLCredentials();
         //server, user, password, databasename
-        $mysql_connection = new mysqli("localhost", "mokarrom",
-            "mysqlMokarrom1!", "receipts");
+        $mysql_connection = new mysqli("localhost", $user["user"],
+            $user["password"], "receipts");
 
         //check if there was an error
         if ($mysql_connection->connect_error)
