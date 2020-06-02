@@ -179,7 +179,17 @@ public class LoginPage extends AppCompatActivity {
                     if(jsonObject.getBoolean("correctPass")) {
                         loginPage.status.setText("You have been logged in.");
 
-                        loginPage.startActivity(new Intent(loginPage.getApplicationContext(), MainActivity.class));
+                        //Go to main menu landing page of the App with a new User object
+                        //which is created using the JSONObject.
+                        User loggedInUser = new User(jsonObject);
+                        Intent mainLandingPageIntent = new Intent(loginPage.getApplicationContext(), MainActivity.class);
+                        //When sending this way, the intent is null in the next page.
+                        //This was fixed by placing the intent in the onCreate method of the next activity.
+                        mainLandingPageIntent.putExtra("Logged In User", loggedInUser);
+
+                        //Start the next activity
+                        loginPage.startActivity(mainLandingPageIntent);
+                        //loginPage.startActivity(new Intent(loginPage.getApplicationContext(), MainActivity.class));
                     }
                     else
                     {

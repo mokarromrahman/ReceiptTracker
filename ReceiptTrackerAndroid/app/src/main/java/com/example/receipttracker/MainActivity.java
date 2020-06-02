@@ -2,6 +2,7 @@ package com.example.receipttracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
@@ -23,8 +24,11 @@ import java.util.TreeMap;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     //Dictionary holding countries and countryIDs from the Back4App api
     Map<String,String> _dictCountries;
@@ -49,14 +53,21 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        TextView tv = (TextView)findViewById((R.id.testTextView));
-        Log.d("MainActivity: ", "I'm in main first");
+        //Log.d("MainActivity: ", "I'm in main first");
         //testing drop down list filling
         List<String> myCountries = new ArrayList<String>(_dictCountries.keySet());
-
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_dropdown_item_1line, myCountries);
         _ddlCountries.setAdapter(adapter);
+
+        //testing the User was parceled and passed correctly to this intent.
+        //Intent which came from the login page.
+        Intent userLoggedInIntent = getIntent();
+
+        //User which was passed with the intent.
+        User loggedInUser = userLoggedInIntent.getParcelableExtra("Logged In User");
+        TextView tv = (TextView)findViewById(R.id.testTextView);
+        tv.setText(loggedInUser.getUserID() + " " + loggedInUser.getToken());
     }
 
     private void InitializeCDictionaries()
