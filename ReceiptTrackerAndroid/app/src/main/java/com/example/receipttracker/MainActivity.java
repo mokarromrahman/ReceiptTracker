@@ -180,18 +180,18 @@ public class MainActivity extends AppCompatActivity {
             try {
                 //create the parameters string to log in
                 //String urlParameters = "submit=Login&" + "email=" + strings[0] + "&password=" + strings[1];
-                String urlParameters = "test";
+                String urlParameters = "message=Iamworking}";
                 byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
 
                 //URL and HTTP POST connection to the server.
-                URL url = new URL("http://www.mokarrom.com/ReceiptWebservice/svc/transactions/");
+                URL url = new URL("http://www.mokarrom.com/ReceiptWebservice/svc/transactions");
                 HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
                 urlConnection.setRequestMethod("POST");
                 urlConnection.setReadTimeout(20000);
                 urlConnection.setConnectTimeout(20000);
                 urlConnection.setDoInput(true);
                 urlConnection.setDoOutput(true);
-                urlConnection.setRequestProperty( "Content-Type", "application/application/x-www-form-urlencoded");
+                urlConnection.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded");
                 urlConnection.setRequestProperty( "charset", "utf-8");
                 urlConnection.setRequestProperty( "Content-Length", Integer.toString( postData.length ));
                 urlConnection.setUseCaches( false );
@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
                 //Try to send the data and read the response
                 try {
                     //Send the data with an output stream
-                    OutputStream os = urlConnection.getOutputStream();
+                   OutputStream os = urlConnection.getOutputStream();
                     BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
                     bw.write(urlParameters);
                     //flush the writer and close it and the output stream
