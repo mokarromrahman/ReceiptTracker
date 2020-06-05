@@ -4,8 +4,8 @@
     function MySQLCredentials()
     {
         $mySQLCred = array();
-        $mySQLCred["user"] = "";	//Replace with your own database username
-        $mySQLCred["password"] = "";//Replace with your own database password
+        $mySQLCred["user"] = "mokarrom";
+        $mySQLCred["password"] = "mysqlMokarrom1!";
 
         return $mySQLCred;
     }
