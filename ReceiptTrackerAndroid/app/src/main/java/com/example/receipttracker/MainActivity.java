@@ -81,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
         tv = (TextView)findViewById(R.id.testTextView);
         tv.setText(loggedInUser.getUserID() + " " + loggedInUser.getToken());
 
-        ReadRESTAPITest readRESTAPITest = new ReadRESTAPITest(this);
+        //ReadRESTAPITest readRESTAPITest = new ReadRESTAPITest(this);
 
-        readRESTAPITest.execute();
+        //readRESTAPITest.execute();
     }
 
     private void InitializeCDictionaries()
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 //create the parameters string to log in
                 //String urlParameters = "submit=Login&" + "email=" + strings[0] + "&password=" + strings[1];
-                String urlParameters = "message=Iamworking}";
+                String urlParameters = "message=Iamworking";
                 byte[] postData = urlParameters.getBytes(StandardCharsets.UTF_8);
 
                 //URL and HTTP POST connection to the server.

@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".SignUpPage"
-            android:parentActivityName=".LoginPage"></activity>1
+            android:parentActivityName=".LoginPage"></activity>
         <activity android:name=".LoginPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
